@@ -14,6 +14,7 @@ import { Button } from "@/components/ui/button"
 export default function Home() {
   const [justifyContent, setJustifyContent] = useState("flex-start")
   const [alignItems, setAlignItems] = useState("flex-start")
+  const [flexDirection, setFlexDirection] = useState<"row" | "row-reverse" | "column" | "column-reverse">("row")
   return (
     <div>
       <div className="flex gap-2 flex-col">
@@ -37,8 +38,17 @@ export default function Home() {
             <DropdownMenuItem onClick={() => setAlignItems("stretch")}>stretch</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
+        <DropdownMenu>
+          <DropdownMenuTrigger>Flex Direction</DropdownMenuTrigger>
+          <DropdownMenuContent>
+            <DropdownMenuItem onClick={() => setFlexDirection("row")}>row</DropdownMenuItem>
+            <DropdownMenuItem onClick={() => setFlexDirection("row-reverse")}>row-reverse</DropdownMenuItem>
+            <DropdownMenuItem onClick={() => setFlexDirection("column")}>column</DropdownMenuItem>
+            <DropdownMenuItem onClick={() => setFlexDirection("column-reverse")}>column-reverse</DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
       </div>
-      <div className="flex gap-2 border-black-500 border-2 h-32" style={{ justifyContent, alignItems }}>
+      <div className="flex gap-2 border-black-500 border-2 min-h-32" style={{ justifyContent, alignItems, flexDirection }}>
         <Button>1</Button>
         <Button>2</Button>
         <Button>3</Button>
