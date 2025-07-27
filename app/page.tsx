@@ -17,10 +17,10 @@ export default function Home() {
   const [flexDirection, setFlexDirection] = useState<"row" | "row-reverse" | "column" | "column-reverse">("row")
   return (
     <div>
-      <div className="flex gap-2 flex-col">
+      <div className="flex gap-0 flex-row justify-end">
         <DropdownMenu>
-        <DropdownMenuTrigger>Justify Content</DropdownMenuTrigger>
-        <DropdownMenuContent>
+        <DropdownMenuTrigger className="text-white bg-black w-50 rounded-md">Justify Content</DropdownMenuTrigger>
+        <DropdownMenuContent className="text-white bg-black">
           <DropdownMenuItem onClick={() => setJustifyContent("flex-start")}>flex-start</DropdownMenuItem>
           <DropdownMenuItem onClick={() => setJustifyContent("center")}>center</DropdownMenuItem>
           <DropdownMenuItem onClick={() => setJustifyContent("flex-end")}>flex-end</DropdownMenuItem>
@@ -30,8 +30,8 @@ export default function Home() {
         </DropdownMenuContent>
         </DropdownMenu>
         <DropdownMenu>
-          <DropdownMenuTrigger>Align Items</DropdownMenuTrigger>
-          <DropdownMenuContent>
+          <DropdownMenuTrigger className="text-white bg-black w-50 rounded-md">Align Items</DropdownMenuTrigger>
+          <DropdownMenuContent className="text-white bg-black">
             <DropdownMenuItem onClick={() => setAlignItems("flex-start")}>start</DropdownMenuItem>
             <DropdownMenuItem onClick={() => setAlignItems("flex-end")}>end</DropdownMenuItem>
             <DropdownMenuItem onClick={() => setAlignItems("center")}>center</DropdownMenuItem>
@@ -39,8 +39,8 @@ export default function Home() {
           </DropdownMenuContent>
         </DropdownMenu>
         <DropdownMenu>
-          <DropdownMenuTrigger>Flex Direction</DropdownMenuTrigger>
-          <DropdownMenuContent>
+          <DropdownMenuTrigger className="text-white bg-black w-50 rounded-md">Flex Direction</DropdownMenuTrigger>
+          <DropdownMenuContent className="text-white bg-black">
             <DropdownMenuItem onClick={() => setFlexDirection("row")}>row</DropdownMenuItem>
             <DropdownMenuItem onClick={() => setFlexDirection("row-reverse")}>row-reverse</DropdownMenuItem>
             <DropdownMenuItem onClick={() => setFlexDirection("column")}>column</DropdownMenuItem>
