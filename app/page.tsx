@@ -21,7 +21,7 @@ export default function Home() {
   const [buttons, setButtons] = useState(4)
   return (
     <div>
-      <div className="flex gap-0 flex-row justify-end">
+      <div className="flex gap-0 flex-row justify-end mb-7">
         <DropdownMenu>
           <DropdownMenuTrigger className="text-white bg-black w-50 rounded-md">Justify Content</DropdownMenuTrigger>
           <DropdownMenuContent className="text-white bg-black">
@@ -81,20 +81,31 @@ export default function Home() {
             <DropdownMenuItem onClick={() => setMargin(40)}>40</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
-        <DropdownMenu>
+        {/* <DropdownMenu>
           <DropdownMenuTrigger className="text-white bg-black w-50 rounded-md">Num buttons</DropdownMenuTrigger>
           <DropdownMenuContent className="text-white bg-black">
             <DropdownMenuItem onClick={() => setButtons(1)}>1</DropdownMenuItem>
             <DropdownMenuItem onClick={() => setButtons(5)}>5</DropdownMenuItem>
             <DropdownMenuItem onClick={() => setButtons(10)}>20</DropdownMenuItem>
           </DropdownMenuContent>
-        </DropdownMenu>
+        </DropdownMenu> */}
       </div>
       <div className="flex gap-2 border-black-500 border-2 min-h-32" style={{ justifyContent, alignItems, flexDirection, gap, padding, margin }}>
         <Button>1</Button>
         <Button>2</Button>
         <Button>3</Button>
         <Button>4</Button>
+      </div>
+
+      <div className="flex justify-center">
+        <div className="flex justify-center flex-col items-center mt-4 border-gray-300 border-2 w-fit rounded-md p-4">
+          <p>Justify Content: {justifyContent}</p>
+          <p>Align Items: {alignItems}</p>
+          <p>Flex Direction: {flexDirection}</p>
+          <p>Gap: {gap}</p>
+          <p>Padding: {padding}</p>
+          <p>Margin: {margin}</p>
+        </div>
       </div>
     </div>
   );
